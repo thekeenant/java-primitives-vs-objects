@@ -29,7 +29,7 @@ public class Benchmarks {
 
       int[] array = new int[size];
       for (int i = 0; i < array.length; i++)
-        array[0] = list.get(0);
+        array[i] = list.get(i);
 
       {
         int[] clone = array.clone();
@@ -39,7 +39,7 @@ public class Benchmarks {
         long end = System.nanoTime();
 
         long millis = TimeUnit.MILLISECONDS.convert(end - start, TimeUnit.NANOSECONDS);
-        System.out.println(millis + "ms (int[])");
+        System.out.println("\t" + millis + "ms (int[])");
       }
 
       {
@@ -50,7 +50,7 @@ public class Benchmarks {
         long end = System.nanoTime();
 
         long millis = TimeUnit.MILLISECONDS.convert(end - start, TimeUnit.NANOSECONDS);
-        System.out.println(millis + "ms (ArrayList<Integer>)");
+        System.out.println("\t" + millis + "ms (ArrayList<Integer>)");
       }
     }
   }
